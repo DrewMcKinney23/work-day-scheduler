@@ -11,20 +11,20 @@ $(document).ready(function () {
         localStorage.setItem(time, text);
     })
    
-    function timeTracker() {
+    function timeBlockTracker() {
     
         var currentHour = moment().hour();
 
-        $(".time-block").each(function () {
-            var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+            $(".time-block").each(function () {
+            var blockHour = parseInt($(this).attr("id").split("hour")[1]);
 
-            if (blockTime < currentHour) {
+                if (blockHour < currentHour) {
                 $(this).addClass("past");
-            }
-            else if (blockTime === currentHour) {
+                }
+                else if (blockHour === currentHour) {
                 $(this).addClass("present");
-            }
-            else {
+                }
+                else {
                 $(this).addClass("future");
 
             }
@@ -43,6 +43,6 @@ $(document).ready(function () {
     $("#hour17 .description").val(localStorage.getItem("hour17"));
 
 
-    timeTracker();
+    timeBlockTracker();
 })
 
