@@ -13,15 +13,15 @@ $(document).ready(function () {
    
     function timeTracker() {
     
-        var timeNow = moment().hour();
+        var currentHour = moment().hour();
 
         $(".time-block").each(function () {
             var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
-            if (blockTime < timeNow) {
+            if (blockTime < currentHour) {
                 $(this).addClass("past");
             }
-            else if (blockTime === timeNow) {
+            else if (blockTime === currentHour) {
                 $(this).addClass("present");
             }
             else {
