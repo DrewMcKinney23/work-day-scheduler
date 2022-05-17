@@ -1,10 +1,5 @@
-const timeDiv = document.querySelector('.time');
-
-setInterval(() => {
-
-timeDiv.innerHTML = new Date();
-
-}, 1000);
+var todayDate = moment().format('dddd, MMM Do YYYY');
+$("#currentDay").html(todayDate);
 
 $(document).ready(function () {
  
